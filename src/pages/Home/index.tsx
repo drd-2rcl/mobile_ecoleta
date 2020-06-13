@@ -2,8 +2,15 @@
 import React from 'react';
 import {View, Image, StyleSheet, Text, ImageBackground} from 'react-native';
 import {RectButton} from 'react-native-gesture-handler';
+import {useNavigation} from '@react-navigation/native';
 
 const Home = () => {
+  const navigation = useNavigation();
+
+  function handleNavigationToPoints() {
+    navigation.navigate('Points');
+  }
+
   return (
     <ImageBackground
       imageStyle={{width: 274, height: 368}}
@@ -18,7 +25,7 @@ const Home = () => {
         </Text>
       </View>
       <View style={styles.footer}>
-        <RectButton style={styles.button} onPress={() => null}>
+        <RectButton style={styles.button} onPress={handleNavigationToPoints}>
           <Text style={styles.buttonText}>Entrar</Text>
         </RectButton>
       </View>
