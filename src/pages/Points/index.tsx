@@ -2,6 +2,7 @@ import React from 'react';
 import {View, StyleSheet, Text} from 'react-native';
 import {TouchableOpacity} from 'react-native-gesture-handler';
 import {useNavigation} from '@react-navigation/native';
+// import MapView from 'react-native-maps';
 
 const Points = () => {
   const navigation = useNavigation();
@@ -15,6 +16,23 @@ const Points = () => {
       <TouchableOpacity onPress={handleNavigateBack}>
         <Text>Voltar</Text>
       </TouchableOpacity>
+
+      <Text style={styles.title}>Bem vindo</Text>
+      <Text style={styles.description}>
+        Encontre no mapa um ponto de coleta
+      </Text>
+
+      <View style={styles.mapContainer}>
+        {/* <MapView
+        style={styles.map}
+        initialRegion={{
+          latitude: 37.78825,
+          longitude: -122.4324,
+          latitudeDelta: 0.0922,
+          longitudeDelta: 0.0421,
+        }}
+        /> */}
+      </View>
     </View>
   );
 };
